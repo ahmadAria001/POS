@@ -1,7 +1,5 @@
 <?php
 
-use App\Http\Controllers\productController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,9 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+require __DIR__ . '/resources/productRotues.php';
+require __DIR__ . '/resources/userRoutes.php';
+require __DIR__ . '/resources/transactionRoutes.php';
+
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 
-Route::get('/product', [productController::class]);
+// Route::prefix('/product')
+//     ->as(':product')
+//     ->group(
+//         base_path('routes/resources/product/productRotues.php')
+//     );
